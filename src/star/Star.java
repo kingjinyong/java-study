@@ -1,4 +1,6 @@
-public class Main {
+package star;
+
+public class Star {
 
     public static void main(String[] args) {
 //        *****
@@ -126,8 +128,5 @@ public class Main {
         }
 
         System.out.println();
-
-        int number = 300;
-        System.out.println((byte) number);
     }
 }
