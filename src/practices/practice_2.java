@@ -1,9 +1,22 @@
 package practices;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class practice_2 {
     public static void main(String[] args) {
-        int[] arr = {4, 5, 3};
-        int[] arr2 = {2, 1, 3};
+        Scanner scanner = new Scanner(System.in);
+        int[] arr = new int[3];
+        int[] arr2 = new int[3];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 10);
+        }
+
+        for (int i = 0; i < 3; i++) {
+            arr2[i] = scanner.nextInt();
+        }
+
         int s = 0;
         int b = 0;
 
@@ -24,6 +37,16 @@ public class practice_2 {
                 }
             }
         }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print(arr[i]);
+        }
+        System.out.println();
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print(arr2[i]);
+        }
+        System.out.println();
         System.out.println(s + "S" + b + "B");
     }
 }
