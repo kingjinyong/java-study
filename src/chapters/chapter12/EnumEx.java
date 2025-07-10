@@ -1,4 +1,4 @@
-package chapter12;
+package chapters.chapter12;
 
 enum Direction {EAST, SOUTH, WEST, NORTH}
 

@@ -1,4 +1,4 @@
-package chapter5;
+package chapters.chapter5;
 
 public class ArrayEx5 {
     public static void main(String[] args) {
