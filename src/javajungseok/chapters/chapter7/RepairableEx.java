@@ -1,6 +1,7 @@
 package javajungseok.chapters.chapter7;
 
 public class RepairableEx {
+
     public static void main(String[] args) {
         Tank tank = new Tank();
         Dropship dropship = new Dropship();
@@ -8,10 +9,12 @@ public class RepairableEx {
         Marine marine = new Marine();
         SCV scv = new SCV();
 
-        scv.repair(tank);
+        scv.repair(tank);       // SCV가 Tank를 수리하게 한다.
         scv.repair(dropship);
+//        scv.repair(marine);
     }
 }
+
 
 interface Repairable {
 }
@@ -23,6 +26,7 @@ class Unit {
     Unit(int hp) {
         MAX_HP = hp;
     }
+    // ...
 }
 
 class GroundUnit extends Unit {
@@ -39,13 +43,14 @@ class AirUnit extends Unit {
 
 class Tank extends GroundUnit implements Repairable {
     Tank() {
-        super(150);
+        super(150);     // Tank의 HP는 150이다.
         hitPoint = MAX_HP;
     }
 
     public String toString() {
         return "Tank";
     }
+    // ...
 }
 
 class Dropship extends AirUnit implements Repairable {
@@ -57,6 +62,7 @@ class Dropship extends AirUnit implements Repairable {
     public String toString() {
         return "Dropship";
     }
+    //...
 }
 
 class Marine extends GroundUnit {
@@ -64,6 +70,7 @@ class Marine extends GroundUnit {
         super(40);
         hitPoint = MAX_HP;
     }
+    //...
 }
 
 class SCV extends GroundUnit implements Repairable {
@@ -74,27 +81,13 @@ class SCV extends GroundUnit implements Repairable {
 
     void repair(Repairable r) {
         if (r instanceof Unit u) {
+            // Unit u = (Unit)r;
             while (u.hitPoint != u.MAX_HP) {
+                /* Unit의 HP를 증가시킨다. */
                 u.hitPoint++;
             }
             System.out.println(u.toString() + "의 수리가 끝났습니다.");
         }
     }
+    //...
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
